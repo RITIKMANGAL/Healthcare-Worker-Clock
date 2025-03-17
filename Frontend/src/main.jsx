@@ -8,7 +8,7 @@ import Auth0ProviderWithHistory from './auth0-provider-with-history';
 import './App.css';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3000/graphql'
+  uri: `${import.meta.env.VITE_BACKEND_URL}/graphql`
 });
 
 const client = new ApolloClient({
