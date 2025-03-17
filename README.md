@@ -54,6 +54,63 @@ A live demo of the app is available here: [https://healthcare-worker-clock-2.onr
 
 ---
 
+
+
+---
+
+## Backend Implementation
+
+- **GraphQL API:**  
+  The backend is built on Express with Apollo Server. GraphQL type definitions and resolvers define queries and mutations for user management, clock in/out, and dashboard statistics.
+
+- **Authentication:**  
+  Custom JWT authentication is implemented in `src/utils/auth.js`. Additionally, Auth0 token verification is available via `src/utils/auth0.js`.
+
+- **Database:**  
+  Prisma ORM connects to a MongoDB database. The Prisma schema in `prisma/schema.prisma` defines the `User` and `Shift` models.
+
+- **Geolocation Check:**  
+  The `clockIn` mutation in `src/schema/resolvers.js` uses the Haversine formula to ensure the care worker is within the allowed perimeter before recording a clock in event.
+
+---
+
+## Frontend Implementation
+
+### PWA Integration
+
+- **Vite and Vite PWA Plugin:**  
+  The project is bootstrapped with Vite. The `vite.config.js` file includes the `vite-plugin-pwa` to generate a service worker and manifest for offline support and installability.
+
+- **Manifest and Icons:**  
+  The PWA manifest is defined in `public/manifest.json` with necessary metadata and icon references.
+
+### Automatic Location Detection
+
+- **GeoNotifier Component:**  
+  The new `GeoNotifier.jsx` component continuously monitors the user’s geolocation using the browser's Geolocation API. When a care worker enters or leaves the defined geofence, it triggers a notification (using Ant Design's notification component) suggesting to clock in or clock out accordingly.
+
+- **Real-Time Notifications:**  
+  These notifications enhance user experience by providing timely reminders, improving workflow efficiency in healthcare settings.
+
+### UI/UX Enhancements
+
+- **Ant Design:**  
+  The frontend leverages Ant Design for a professional and responsive user interface, including menus, forms, buttons, cards, and tables.
+
+- **Auth0 Integration:**  
+  The Auth0 React SDK is integrated via `auth0-provider-with-history.jsx`, allowing users to log in using Auth0 (with Google and email options).
+
+---
+
+## Setup and Installation
+
+### Backend
+
+1. **Navigate to the `/backend` directory.**
+2. Install dependencies:
+   ```bash
+   npm install
+
 ## Project Structure
 
 The project is split into two main directories: **backend** and **frontend**.
