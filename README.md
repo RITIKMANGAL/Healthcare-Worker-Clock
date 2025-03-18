@@ -32,9 +32,8 @@ A live demo of the app is available here: [https://healthcare-worker-clock-2.onr
   - [PWA Integration](#pwa-integration)
   - [Automatic Location Detection](#automatic-location-detection)
 - [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [Live Demo](#live-demo)
-- [License](#license)
+- [Documentation](#documentation)
+
 
 ---
 
@@ -51,10 +50,6 @@ A live demo of the app is available here: [https://healthcare-worker-clock-2.onr
   - **Auth0 React SDK:** For seamless third-party authentication.
   - **Vite PWA Plugin:** For service workers and offline capabilities.
   - **Geolocation API:** For automatic location detection and notifications.
-
----
-
-
 
 ---
 
@@ -110,10 +105,3 @@ A live demo of the app is available here: [https://healthcare-worker-clock-2.onr
 2. Install dependencies:
    ```bash
    npm install
-
-## Project Structure
-
-The project is split into two main directories: **backend** and **frontend**.
-
-### Backend
-
