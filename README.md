@@ -105,3 +105,7 @@ A live demo of the app is available here: [https://healthcare-worker-clock-2.onr
 2. Install dependencies:
    ```bash
    npm install
+
+
+   Documentation
+For additional documentation and detailed usage instructions, please refer to the Google Drive Documentation.
